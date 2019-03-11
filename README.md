@@ -1,20 +1,22 @@
 #### 刷题记录
 
 ##### LeetCode和一些算法收集
+
 https://leetcode-cn.com
 
- ├── README.md
- ├── 
- ├── src
- │   ├── calculation
- │   │   ├── to_sum.go
- │   ├── sort
- │   │   ├── bubble_sort.go
- │   │   ├── quick_sort.go
- │   └── Transformation
- └── tests
-        ├── CalculationTest
-        │   ├── 
-        ├── FilterTest
-        │   ├── 
-      
+
+    ├──src
+    │    ├── calculation  计算 
+    │    │    └── to_sum.go             两数之和
+    │    ├── query        查找 
+    │    │    └── binary_search.go      二分查找
+    │    ├── sort         排序
+    │    │    ├── bubble_sort.go        冒泡排序
+    │    │    └── quick_sort.go         快速排序 
+    │    │     
+    │    ├── structure    数据结构
+    │    │    └── structure_array.go    稀疏数组
+    │
+    ├──LICENSE
+    └──README.md
+

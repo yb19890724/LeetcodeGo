@@ -1,6 +1,5 @@
 package query
 
-
 var (
 	low    int // 开始区间
 	high   int // 结束区间
@@ -37,7 +36,7 @@ func BinarySort(data []int, search int) bool {
 	return false
 }
 
-// 二分查找第一匹配的元素
+// 查找第一匹配的元素
 
 /*
   @todo:理解
@@ -76,7 +75,31 @@ func FirstBinarySearch(data []int, search int) bool {
 	return false
 }
 
-/*func data() {
-	fmt.Println(BinarySort([]int{1, 3, 5}, 1))
-	fmt.Println(FirstBinarySearch([]int{1, 1, 3, 4, 5}, 1))
-}*/
+// 查找最后一个匹配的元素
+/**
+	如果data[middle]这个元素已经是数组中的最后一个元素了，那它肯定是我们要找的；
+	如果data[middle]的后一个元素data[middle+1]不等于value，那也说明data[middle]就是我们要找的最后一个值等于给定值的元素。
+ 	发现data[middle]后面的一个元素data[middle+1]也等于value，那说明当前的这个data[middle]并不是最后一个值等于给定值的元素。
+	我们就更新low=middle+1，因为要找的元素肯定出现在[middle+1, high]之间。
+*/
+
+func LastBinarySearch(data []int, search int) bool {
+	low = 0
+	high = len(data) - 1
+	
+	for low <= high {
+		middle = low + (high-low)/2
+		
+		if data[middle] > search {
+			high = middle - 1
+		} else if data[middle] < search {
+			low = middle + 1
+		} else {
+			if (middle == len(data)-1) || (data[middle+1] != search) {
+				return true
+			}
+			low = middle + 1
+		}
+	}
+	return false
+}
