@@ -17,7 +17,7 @@ var (
   改进的方法是将mid的计算方式写成low+(high-low)/2。
   更进一步，如果要将性能优化到极致的话，我们可以将这里的除以2操作转化成位运算low+((high-low)>>1)
 */
-func BinarySort(data []int, search int) bool {
+func BinarySort(data []int, search int) int {
 	
 	low = 0
 	high = len(data) - 1
@@ -30,10 +30,10 @@ func BinarySort(data []int, search int) bool {
 		} else if data[middle] < search {
 			low = middle + 1
 		} else {
-			return true
+			return middle
 		}
 	}
-	return false
+	return -1
 }
 
 // 查找第一匹配的元素
@@ -53,7 +53,7 @@ func BinarySort(data []int, search int) bool {
   那我们就更新high=middle-1，因为要找的元素肯定出现 在[low, middle-1]之间。
 */
 
-func FirstBinarySearch(data []int, search int) bool {
+func FirstBinarySearch(data []int, search int) int {
 	
 	low = 0
 	high = len(data) - 1
@@ -67,12 +67,12 @@ func FirstBinarySearch(data []int, search int) bool {
 			low = middle + 1
 		} else {
 			if (middle == 0) || (data[middle-1] != search) {
-				return true
+				return middle
 			}
 			high = middle - 1
 		}
 	}
-	return false
+	return -1
 }
 
 // 查找最后一个匹配的元素
@@ -83,7 +83,7 @@ func FirstBinarySearch(data []int, search int) bool {
 	我们就更新low=middle+1，因为要找的元素肯定出现在[middle+1, high]之间。
 */
 
-func LastBinarySearch(data []int, search int) bool {
+func LastBinarySearch(data []int, search int) int {
 	low = 0
 	high = len(data) - 1
 	
@@ -96,10 +96,10 @@ func LastBinarySearch(data []int, search int) bool {
 			low = middle + 1
 		} else {
 			if (middle == len(data)-1) || (data[middle+1] != search) {
-				return true
+				return middle
 			}
 			low = middle + 1
 		}
 	}
-	return false
+	return -1
 }

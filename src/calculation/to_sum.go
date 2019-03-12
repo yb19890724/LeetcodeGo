@@ -5,16 +5,16 @@ package calculation
 func TwoSum(nums []int, target int) []int {
 
 	for i := 0; i < len(nums); i++ {
+		
 		for j := i + 1; j < len(nums); j++ {
+			
 			if (nums[i] + nums[j]) == target {
+				
 				return []int{i, j}
+				
 			}
 		}
 	}
 
 	return []int{}
 }
-
-// 测试
-// TwoSum([]int{3, 2, 3}, 6)
-// [0,2]

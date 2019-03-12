@@ -11,8 +11,7 @@ func QuickSort(data []int) []int {
 		
 	}
 	
-	left := make([]int, 0, len(data))
-	right := make([]int, 0, len(data))
+	left ,right:= make([]int, 0, len(data)),make([]int, 0, len(data))
 	
 	for i := 1; i < len(data); i++ {
 		
@@ -29,8 +28,7 @@ func QuickSort(data []int) []int {
 		}
 	}
 	
-	left = QuickSort(left)
-	right = QuickSort(right)
+	left,right = QuickSort(left),QuickSort(right)
 	
 	left = append(left, data[0])
 	
