@@ -17,7 +17,11 @@ var (
   改进的方法是将mid的计算方式写成low+(high-low)/2。
   更进一步，如果要将性能优化到极致的话，我们可以将这里的除以2操作转化成位运算low+((high-low)>>1)
 */
-func BinarySort(data []int, search int) int {
+func BinarySearch(data []int, search int) int {
+	
+	if data == nil {
+		return -1
+	}
 	
 	low = 0
 	high = len(data) - 1
@@ -55,6 +59,10 @@ func BinarySort(data []int, search int) int {
 
 func FirstBinarySearch(data []int, search int) int {
 	
+	if data == nil {
+		return -1
+	}
+	
 	low = 0
 	high = len(data) - 1
 	
@@ -84,6 +92,11 @@ func FirstBinarySearch(data []int, search int) int {
 */
 
 func LastBinarySearch(data []int, search int) int {
+	
+	if data == nil {
+		return -1
+	}
+	
 	low = 0
 	high = len(data) - 1
 	

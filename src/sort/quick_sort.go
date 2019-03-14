@@ -5,6 +5,10 @@ package sort
 
 func QuickSort(data []int) []int {
 	
+	if data == nil {
+		return []int{}
+	}
+	
 	if len(data) <= 1 {
 		
 		return data

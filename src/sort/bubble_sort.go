@@ -5,6 +5,10 @@ package sort
 
 func BubbleSort(data []int) []int {
 	
+	if data == nil {
+		return []int{}
+	}
+	
 	for i := 0; i <= len(data); i++ {
 		
 		for j := i + 1; j < len(data); j++ {
