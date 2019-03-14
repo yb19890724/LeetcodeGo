@@ -19,10 +19,6 @@ var (
 */
 func BinarySearch(data []int, search int) int {
 	
-	if data == nil {
-		return -1
-	}
-	
 	low = 0
 	high = len(data) - 1
 	
@@ -59,10 +55,6 @@ func BinarySearch(data []int, search int) int {
 
 func FirstBinarySearch(data []int, search int) int {
 	
-	if data == nil {
-		return -1
-	}
-	
 	low = 0
 	high = len(data) - 1
 	
@@ -92,10 +84,6 @@ func FirstBinarySearch(data []int, search int) int {
 */
 
 func LastBinarySearch(data []int, search int) int {
-	
-	if data == nil {
-		return -1
-	}
 	
 	low = 0
 	high = len(data) - 1

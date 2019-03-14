@@ -5,17 +5,13 @@ package sort
 
 func QuickSort(data []int) []int {
 	
-	if data == nil {
-		return []int{}
-	}
-	
 	if len(data) <= 1 {
 		
 		return data
 		
 	}
 	
-	left ,right:= make([]int, 0, len(data)),make([]int, 0, len(data))
+	left, right := make([]int, 0, len(data)), make([]int, 0, len(data))
 	
 	for i := 1; i < len(data); i++ {
 		
@@ -32,7 +28,7 @@ func QuickSort(data []int) []int {
 		}
 	}
 	
-	left,right = QuickSort(left),QuickSort(right)
+	left, right = QuickSort(left), QuickSort(right)
 	
 	left = append(left, data[0])
 	

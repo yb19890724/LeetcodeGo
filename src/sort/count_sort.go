@@ -18,8 +18,8 @@ package sort
 
 func CountSort(data []int) []int {
 	
-	if nil == data || len(data) <= 0 {
-		return []int{}
+	if len(data) <= 1 {
+		return data
 	}
 	
 	var max int = data[0]
