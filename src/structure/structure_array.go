@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	`fmt`
+)
 
 // 默认棋局大小
 // var chessMap [][]int
@@ -62,7 +64,7 @@ func SaveChessMap(chessMap [11][11]int) []ValNode {
 }
 
 // 恢复棋盘
-func LoadGame(sparseArr[]ValNode) [11][11]int{
+func LoadGame(sparseArr []ValNode) [11][11]int {
 	
 	// 存盘功能可以用 写入文件方式
 	// 回复用读取文件方式
@@ -82,32 +84,50 @@ func LoadGame(sparseArr[]ValNode) [11][11]int{
 	return chessMap
 }
 
+func CreateChessMap(row int, col int) [][]int {
+	var chessMap = make([][]int, row, col)
+	var rowArray []int = make([]int, row, col)
+	for i := 0; i < col; i++ {
+		chessMap[i] = rowArray
+	}
+	return chessMap
+}
+
 func main() {
 	
-	var chessMap [11][11]int
-	chessMap[1][2] = 1 // 黑棋子
-	chessMap[2][3] = 2 // 白棋子
+	row, col := 11, 11 // 定义棋局范围
+	chessMap := CreateChessMap(row, col)
 	
-	// 查看棋局
-	ShowChessMap(chessMap)
+	chessMap[1][0] = 1 // 黑棋子
+	// chessMap[2][3] = 2 // 白棋子
+	fmt.Println(chessMap)
 	
-	// 存储棋局和棋盘
-	sparseArr := SaveChessMap(chessMap)
+	// var chessMap [][]int =make([][]int,11 ,11)
 	
-	// 查看存储的棋局
-	for i, valNode := range sparseArr {
-		fmt.Printf("%d: %d %d %d\n", i, valNode.row, valNode.col, valNode.val)
-	}
-	
-	// 读取进度
-	LoadGame(sparseArr)
-	
-	
-	// 读取棋盘进度
-	for _, v := range chessMap {
-		for _, v2 := range v {
-			fmt.Printf("%d\t", v2)
-		}
-		fmt.Println()
-	}
+	// fmt.Println(chessMap)
+	// chessMap[1][2] = 1 // 黑棋子
+	// chessMap[2][3] = 2 // 白棋子
+	//
+	// // 查看棋局
+	// ShowChessMap(chessMap)
+	//
+	// // 存储棋局和棋盘
+	// sparseArr := SaveChessMap(chessMap)
+	//
+	// // 查看存储的棋局
+	// for i, valNode := range sparseArr {
+	// 	fmt.Printf("%d: %d %d %d\n", i, valNode.row, valNode.col, valNode.val)
+	// }
+	//
+	// // 读取进度
+	// LoadGame(sparseArr)
+	//
+	//
+	// // 读取棋盘进度
+	// for _, v := range chessMap {
+	// 	for _, v2 := range v {
+	// 		fmt.Printf("%d\t", v2)
+	// 	}
+	// 	fmt.Println()
+	// }
 }
