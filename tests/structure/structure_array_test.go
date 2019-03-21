@@ -124,7 +124,7 @@ func TestSaveSparseArr(t *testing.T) {
 	}
 	sparseArr = append(sparseArr, valNode)
 	
-	saveChessMap := structure.SaveSparseArr(chessMap, sparseArr)
+	saveChessMap := structure.SaveSparseArray(chessMap, sparseArr)
 	
 	actualChessMap := createSparseArray(row, col)
 	
@@ -139,7 +139,7 @@ func TestRecoverSparseArr(t *testing.T) {
 	
 	recodeChessMap := createSparseArray(row, col)
 	
-	actualChessMap := structure.RecoverSparseArr(recodeChessMap)
+	actualChessMap := structure.RecoverSparseArray(recodeChessMap)
 	
 	defaultRow, twoRow, threeRow := createTestData(row, col)
 	

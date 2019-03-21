@@ -20,17 +20,17 @@ func CreateArray(row int, col int) [][]int {
 }
 
 // 恢复原始数据
-// @var sparseArr[0]  	记录行，记录记录列
-// @var sparseArr[0:]   记录值
+// @var sparseArray[0]  	记录行，记录记录列
+// @var sparseArray[0:]   记录值
 
-func RecoverSparseArr(sparseArr []ValNode) [][]int {
+func RecoverSparseArray(sparseArray []ValNode) [][]int {
 	
-	size, sparseArr := sparseArr[0], sparseArr[0:]
+	size, sparseArray := sparseArray[0], sparseArray[0:]
 	
 	data := CreateArray(size.Row, size.Col)
 	
 	// 便利 每一行文件
-	for i, valNode := range sparseArr {
+	for i, valNode := range sparseArray {
 		
 		if i != 0 { // 这里判断是因为兼容 第一个存储的是规模
 			
@@ -42,7 +42,7 @@ func RecoverSparseArr(sparseArr []ValNode) [][]int {
 }
 
 // 存储记录到稀疏数组
-func SaveSparseArr(data [][]int, sparseArr []ValNode) []ValNode {
+func SaveSparseArray(data [][]int, sparseArray []ValNode) []ValNode {
 	
 	// 存储稀疏数组值
 	for i, v := range data {
@@ -55,10 +55,10 @@ func SaveSparseArr(data [][]int, sparseArr []ValNode) []ValNode {
 					Col: j,
 					Val: v2,
 				}
-				sparseArr = append(sparseArr, valNode)
+				sparseArray = append(sparseArray, valNode)
 			}
 		}
 		
 	}
-	return sparseArr
+	return sparseArray
 }
