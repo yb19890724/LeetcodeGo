@@ -2,7 +2,7 @@ package structure
 
 import (
 	"fmt"
-	"github.com/hyb/LeetCode/src/structure"
+	"github.com/yb19890724/leetcode-go/src/structure"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
@@ -79,8 +79,7 @@ func createSparseArray(row int, col int) []structure.ValNode {
 	
 }
 
-// @todo 测试创建棋局
-
+// @test create sparse array
 func TestCreateSparseArray(t *testing.T) {
 	
 	row, col := 11, 11 // 定义棋局范围
@@ -108,8 +107,8 @@ func TestCreateSparseArray(t *testing.T) {
 	
 }
 
-// @todo 存储棋局
-func TestSaveSparseArr(t *testing.T) {
+// @test save sparse array
+func TestSaveSparseArray(t *testing.T) {
 	
 	row, col := 11, 11 // 定义棋局范围
 	
@@ -132,8 +131,8 @@ func TestSaveSparseArr(t *testing.T) {
 	
 }
 
-// @todo 恢复棋局
-func TestRecoverSparseArr(t *testing.T) {
+// @test  recover sparse array
+func TestRecoverSparseArray(t *testing.T) {
 	
 	row, col := 11, 11 // 定义棋局范围
 	
