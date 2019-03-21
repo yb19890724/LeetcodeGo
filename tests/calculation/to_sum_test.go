@@ -1,7 +1,7 @@
 package calculation
 
 import (
-	`github.com/hyb/LeetCode/src/calculation`
+	`github.com/hyb/LeetCode-Go/src/calculation`
 	`github.com/stretchr/testify/assert`
 	`testing`
 )

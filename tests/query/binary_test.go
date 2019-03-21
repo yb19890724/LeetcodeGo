@@ -1,7 +1,7 @@
 package query
 
 import (
-	`github.com/hyb/LeetCode/src/query`
+	`github.com/hyb/LeetCode-Go/src/query`
 	`github.com/stretchr/testify/assert`
 	`testing`
 )

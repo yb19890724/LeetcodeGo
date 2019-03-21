@@ -1,7 +1,7 @@
 package sort
 
 import (
-	`github.com/hyb/LeetCode/src/sort`
+	`github.com/hyb/LeetCode-Go/src/sort`
 	`github.com/stretchr/testify/assert`
 	`testing`
 )
