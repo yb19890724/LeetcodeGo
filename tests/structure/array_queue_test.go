@@ -25,7 +25,7 @@ func initQueue() *structure.ArrayQueue {
 }
 
 // @test  queue enqueue 测试入列
-func TestDequeue(t *testing.T) {
+func TestEnQueue(t *testing.T) {
 	
 	arrayQueue := initQueue()
 	
@@ -34,14 +34,14 @@ func TestDequeue(t *testing.T) {
 }
 
 // @test  queue dequeue 测试出队
-func TestEnQueue(t *testing.T) {
+func TestDequeue(t *testing.T) {
 	
 	arrayQueue := initQueue()
 	
 	testData := []int{1, 2, 3, 4, 5}
 	
 	for i := 0; i < arrayQueue.MaxSize; i++ {
-		assert.Equal(t, arrayQueue.Dequeue(), testData, " queue dequeue error ")
+		assert.Equal(t, arrayQueue.Dequeue(), testData[i], " queue dequeue error ")
 	}
 	
 }

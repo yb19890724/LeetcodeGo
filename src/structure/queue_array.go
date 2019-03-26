@@ -19,6 +19,7 @@ type Queue interface {
 	Enqueue() // 入列
 	Dequeue() // 出列
 	Show()    // 遍历队列
+	All()
 }
 
 // 数组实现：顺序队列

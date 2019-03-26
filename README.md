@@ -13,10 +13,12 @@ https://leetcode-cn.com
     │    ├── sort         排序
     │    │    ├── bubble_sort.go        冒泡排序
     │    │    ├── count_sort.go         计数排序
+    │    │    ├── selection_sort.go     选择排序
     │    │    └── quick_sort.go         快速排序 
     │    │     
     │    └──  structure    数据结构
-    │         └── structure_array.go    稀疏数组
+    │         ├── structure_array.go    稀疏数组
+    │         └── queue_array.go        数组队列
     │
     ├──LICENSE
     └──README.md
