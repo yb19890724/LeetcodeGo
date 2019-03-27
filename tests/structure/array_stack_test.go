@@ -38,9 +38,10 @@ func TestStackPop(t *testing.T)  {
 		testStack[i]=i+1
 		arrayStack.Push(i+1)
 	}
-
-	for j := 1; j <= 10; j++ {
-		assert.Equal(t, arrayStack.Pop(), testStack[arrayStack.MaxSize-j], " stack pop error  ")
+	
+	count :=arrayStack.Count
+	for j := count; j <= 1; j-- {
+		assert.Equal(t, arrayStack.Pop(), testStack[arrayStack.Count-j], " stack pop error  ")
 	}
 
 }
