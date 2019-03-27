@@ -27,7 +27,7 @@ func (stack *ArrayStack) Push(item int) bool {
 
 	stack.Array[stack.Count] = item
 
-	item++
+	stack.Count++
 
 	return true
 }

@@ -1,7 +1,6 @@
 package structure
 
 import (
-	"fmt"
 	"github.com/stretchr/testify/assert"
 	"github.com/yb19890724/leetcode-go/src/structure"
 	"testing"
@@ -39,9 +38,9 @@ func TestStackPop(t *testing.T)  {
 		testStack[i]=i+1
 		arrayStack.Push(i+1)
 	}
-	fmt.Println(testStack,arrayStack.Array)
-	for i := 10; i <= 1; i-- {
-		assert.Equal(t,arrayStack.Pop(),testStack[i]," stack pop error  ")
+
+	for j := 1; j <= 10; j++ {
+		assert.Equal(t, arrayStack.Pop(), testStack[arrayStack.MaxSize-j], " stack pop error  ")
 	}
 
 }
