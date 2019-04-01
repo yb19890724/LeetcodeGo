@@ -12,22 +12,22 @@ type Stack interface {
 type ArrayStack struct {
 	MaxSize int   // 最大长度
 	Array   [10]int // 数组
-	Count   int   // 元素数量
+	Top   int   // 顶栈
 }
 
 // 入栈
 func (stack *ArrayStack) Push(item int) bool {
 
 	// 判断栈是否满了
-	if stack.Count == stack.MaxSize {
+	if stack.Top == stack.MaxSize {
 
 		return false
 
 	}
 
-	stack.Array[stack.Count] = item
+	stack.Array[stack.Top] = item
 
-	stack.Count++
+	stack.Top++
 
 	return true
 }
@@ -35,13 +35,13 @@ func (stack *ArrayStack) Push(item int) bool {
 // 出栈
 func (stack *ArrayStack) Pop() int {
 
-	if stack.Count == 0 {
+	if stack.Top == 0 {
 		panic(" stack is null ")
 	}
 
-	item := stack.Array[stack.Count-1]
+	item := stack.Array[stack.Top-1]
 
-	stack.Count--
+	stack.Top--
 
 	return item
 }
