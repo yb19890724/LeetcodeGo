@@ -6,8 +6,8 @@ import (
 	"testing"
 )
 
-func createStack() structure.ArrayStack  {
-	arrayStack :=structure.ArrayStack{
+func createStack() structure.ArrayStack {
+	arrayStack := structure.ArrayStack{
 		10,
 		[10]int{},
 		0,
@@ -16,31 +16,30 @@ func createStack() structure.ArrayStack  {
 }
 
 // @test stack push
-func TestStackPush(t *testing.T)  {
+func TestStackPush(t *testing.T) {
 
 	arrayStack := createStack()
 
 	for i := 1; i <= arrayStack.MaxSize; i++ {
-		assert.Equal(t,arrayStack.Push(i),true," stack pop push ")
+		assert.Equal(t, arrayStack.Push(i), true, " stack pop push ")
 	}
-
 
 }
 
 // @test stack pop
-func TestStackPop(t *testing.T)  {
+func TestStackPop(t *testing.T) {
 
 	arrayStack := createStack()
 
 	var testStack [10]int
 
 	for i := 0; i < arrayStack.MaxSize; i++ {
-		testStack[i]=i+1
-		arrayStack.Push(i+1)
+		testStack[i] = i + 1
+		arrayStack.Push(i + 1)
 	}
-	
-	for j := arrayStack.Count; j <= 1; j-- {
-		assert.Equal(t, arrayStack.Pop(), testStack[arrayStack.Count-j], " stack pop error  ")
+
+	for j := arrayStack.Top; j <= 1; j-- {
+		assert.Equal(t, arrayStack.Pop(), testStack[arrayStack.Top-j], " stack pop error  ")
 	}
 
 }
