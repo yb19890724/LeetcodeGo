@@ -2,13 +2,12 @@ package structure
 
 import (
 	"github.com/stretchr/testify/assert"
-	"github.com/yb19890724/leetcode-go/src/structure"
 	"testing"
 )
 
 // 初始化公用队列结构
-func initCircularQueue() *structure.CircularArrayQueue {
-	circularQueue := &structure.CircularArrayQueue{
+func initCircularQueue() *CircularArrayQueue {
+	circularQueue := &CircularArrayQueue{
 		5,
 		[5]int{},
 		0,

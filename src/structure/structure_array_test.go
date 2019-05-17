@@ -2,7 +2,6 @@ package structure
 
 import (
 	"fmt"
-	"github.com/yb19890724/leetcode-go/src/structure"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
@@ -50,15 +49,15 @@ func createChessMapData(row int, col int) [][]int {
 // @todo 创建数组
 func createArray(row int, col int) [][]int {
 	
-	chessMap := structure.CreateArray(row, col)
+	chessMap := CreateArray(row, col)
 	
 	return chessMap
 }
 
 // @todo 创建稀疏数组记录
-func createSparseArray(row int, col int) []structure.ValNode {
+func createSparseArray(row int, col int) []ValNode {
 	
-	sparseArray := []structure.ValNode{
+	sparseArray := []ValNode{
 		{
 			Row: row,
 			Col: col,
@@ -114,16 +113,16 @@ func TestSaveSparseArray(t *testing.T) {
 	
 	chessMap := createChessMapData(row, col)
 	
-	var sparseArr []structure.ValNode
+	var sparseArr []ValNode
 	
-	valNode := structure.ValNode{
+	valNode := ValNode{
 		Row: row,
 		Col: col,
 		Val: 0,
 	}
 	sparseArr = append(sparseArr, valNode)
 	
-	saveChessMap := structure.SaveSparseArray(chessMap, sparseArr)
+	saveChessMap := SaveSparseArray(chessMap, sparseArr)
 	
 	actualChessMap := createSparseArray(row, col)
 	
@@ -138,7 +137,7 @@ func TestRecoverSparseArray(t *testing.T) {
 	
 	recodeChessMap := createSparseArray(row, col)
 	
-	actualChessMap := structure.RecoverSparseArray(recodeChessMap)
+	actualChessMap := RecoverSparseArray(recodeChessMap)
 	
 	defaultRow, twoRow, threeRow := createTestData(row, col)
 	

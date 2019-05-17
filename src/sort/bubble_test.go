@@ -1,7 +1,6 @@
 package sort
 
 import (
-	`github.com/yb19890724/leetcode-go/src/sort`
 	`github.com/stretchr/testify/assert`
 	`testing`
 )
@@ -9,7 +8,7 @@ import (
 // @test bubble sort
 func TestBubbleSort(t *testing.T) {
 	
-	result := sort.BubbleSort([]int{1, 34, 6, 7, 10})
+	result := BubbleSort([]int{1, 34, 6, 7, 10})
 	
 	assert.Equal(t, result, []int{1, 6, 7, 10, 34}, " data bubble sort error. ")
 }

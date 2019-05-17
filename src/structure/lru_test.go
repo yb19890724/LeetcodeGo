@@ -3,7 +3,6 @@ package structure
 import (
 	"fmt"
 	"github.com/stretchr/testify/assert"
-	"github.com/yb19890724/leetcode-go/src/structure"
 	"testing"
 )
 
@@ -33,7 +32,7 @@ func findType(i interface{}) {
 // 但是a在中间被访问所以，b在最后面被淘汰调：满足最近最少使用策略
 func TestLruCache(t *testing.T) {
 
-	lru := structure.NewLruCache(5)
+	lru := NewLruCache(5)
 
 	lru.Set("a", 1)
 	lru.Set("b", 2)
@@ -51,7 +50,7 @@ func TestLruCache(t *testing.T) {
 
 		if item, exists := lru.Items[value]; exists {
 
-			assert.Equal(t,tmp[key],item.Value.(*structure.Item).Value)
+			assert.Equal(t,tmp[key],item.Value.(*Item).Value)
 
 		}
 

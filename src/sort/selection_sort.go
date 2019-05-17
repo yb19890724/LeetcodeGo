@@ -1,10 +1,6 @@
 package sort
 
 
-/**
-
- */
-
 // 选择排序
 func SelectionSort(data []int) []int{
 	times := 0

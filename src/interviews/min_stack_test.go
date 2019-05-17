@@ -2,7 +2,6 @@ package interviews
 
 import (
 	"github.com/stretchr/testify/assert"
-	"github.com/yb19890724/leetcode-go/src/interviews"
 	"testing"
 )
 
@@ -11,11 +10,11 @@ func TestMinStackPush(t *testing.T) {
 
 	var elem int = 1
 
-	var item [10]interviews.Node
+	var item [10]Node
 
-	item[0] = interviews.Node{elem, elem}
+	item[0] = Node{elem, elem}
 
-	minStack := interviews.MinStack{10, 0, [10]interviews.Node{}}
+	minStack := MinStack{10, 0, [10]Node{}}
 
 	judge := minStack.Push(elem)
 
@@ -29,7 +28,7 @@ func TestMinStackPush(t *testing.T) {
 func TestMinStackPop(t *testing.T) {
 
 
-	minStack := interviews.MinStack{10, 0, [10]interviews.Node{}}
+	minStack := MinStack{10, 0, [10]Node{}}
 
 	minStack.Push(1)
 
@@ -41,7 +40,7 @@ func TestMinStackPop(t *testing.T) {
 func TestMinStackMin(t *testing.T) {
 
 
-	minStack := interviews.MinStack{10, 0, [10]interviews.Node{}}
+	minStack := MinStack{10, 0, [10]Node{}}
 
 	minStack.Push(1)
 	minStack.Push(2)

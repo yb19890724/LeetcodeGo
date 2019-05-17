@@ -2,12 +2,11 @@ package structure
 
 import (
 	"github.com/stretchr/testify/assert"
-	"github.com/yb19890724/leetcode-go/src/structure"
 	"testing"
 )
 
-func createStack() structure.ArrayStack {
-	arrayStack := structure.ArrayStack{
+func createStack() ArrayStack {
+	arrayStack := ArrayStack{
 		10,
 		[10]int{},
 		0,

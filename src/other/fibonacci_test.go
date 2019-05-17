@@ -2,7 +2,6 @@ package other
 
 import (
 	"github.com/stretchr/testify/assert"
-	"github.com/yb19890724/leetcode-go/src/other"
 	"testing"
 )
 
@@ -12,7 +11,7 @@ func TestFibonacci(t *testing.T) {
 	
 	for i := 1; i <= 10; i++ {
 		
-		assert.Equal(t, other.Fibonacci(i), data[i-1], " fibonacci error")
+		assert.Equal(t, Fibonacci(i), data[i-1], " fibonacci error")
 		
 	}
 }

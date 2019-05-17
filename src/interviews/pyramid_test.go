@@ -1,7 +1,6 @@
 package interviews
 
 import (
-	"github.com/yb19890724/leetcode-go/src/interviews"
 	"testing"
 )
 
@@ -9,6 +8,6 @@ import (
 // @param level 层级
 func TestPyramid(t *testing.T) {
 
-	interviews.Pyramid(9)
+	Pyramid(9)
 
 }

@@ -2,13 +2,12 @@ package structure
 
 import (
 	"github.com/stretchr/testify/assert"
-	"github.com/yb19890724/leetcode-go/src/structure"
 	"testing"
 )
 
 // 初始化公用队列结构
-func initQueue() *structure.ArrayQueue {
-	arrayQueue := &structure.ArrayQueue{
+func initQueue() *ArrayQueue {
+	arrayQueue := &ArrayQueue{
 		5,
 		[5]int{},
 		0,
