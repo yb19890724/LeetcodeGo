@@ -1,4 +1,4 @@
-package goruntine
+package concurrency
 
 // 参考解释
 //https://www.jianshu.com/p/21e7e8c23090

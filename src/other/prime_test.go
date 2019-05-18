@@ -2,7 +2,6 @@ package other
 
 import (
 	"github.com/stretchr/testify/assert"
-	"github.com/yb19890724/leetcode-go/src/goruntine"
 	"testing"
 )
 
@@ -15,17 +14,3 @@ func TestPrime(t *testing.T) {
 
 }
 
-// @test goruntime prime
-func TestGoRuntimePrime(t *testing.T) {
-
-	prime := goruntine.Sieve()
-
-	data := []int{2, 3}
-
-	for i := 0; i < len(data); i++ {
-
-		assert.Equal(t, <-prime, data[i], " prime judge error")
-
-	}
-
-}
