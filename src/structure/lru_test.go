@@ -50,7 +50,7 @@ func TestLruCache(t *testing.T) {
 
 		if item, exists := lru.Items[value]; exists {
 
-			assert.Equal(t,tmp[key],item.Value.(*Item).Value)
+			assert.Equal(t, tmp[key], item.Value.(*Item).Value)
 
 		}
 

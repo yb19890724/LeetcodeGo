@@ -5,7 +5,7 @@ import (
 )
 
 // @test multiplication table
-func TestMultiplicationTable(t *testing.T)  {
+func TestMultiplicationTable(t *testing.T) {
 
 	MultiplicationTable()
 

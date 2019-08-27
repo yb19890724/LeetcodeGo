@@ -3,7 +3,6 @@ package concurrency
 // 参考解释
 //https://www.jianshu.com/p/21e7e8c23090
 
-
 // 生成数
 func Generate() chan int {
 
@@ -34,9 +33,9 @@ func Filter(in chan int, primer int) chan int {
 
 		for {
 
-			i:= <- in
+			i := <-in
 
-			if i%primer != 0{
+			if i%primer != 0 {
 
 				out <- i
 
@@ -48,10 +47,8 @@ func Filter(in chan int, primer int) chan int {
 	return out
 }
 
-
 // 筛选素数
 // @todo 在循环的最后一步，把out赋值给ch，这一步很重要，是为了下一步循环做铺垫，所谓的赋值，即是把下一轮的数据流ch指定为本轮的输出流out：本轮输出流流向下轮输入流，如此往复...
-
 
 func Sieve() chan int {
 
@@ -63,7 +60,7 @@ func Sieve() chan int {
 
 		for {
 
-			prime := <- ch // 取出数列
+			prime := <-ch // 取出数列
 
 			ch = Filter(ch, prime) //过滤数列
 

@@ -33,7 +33,7 @@ func (queue *CircularArrayQueue) Enqueue(item int) (boolean bool) {
 
 	// 判断队列是否满了
 	if (queue.Tail+1)%queue.MaxSize == queue.Head {
-		return false;
+		return false
 	}
 
 	queue.Array[queue.Tail] = item

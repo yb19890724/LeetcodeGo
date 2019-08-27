@@ -1,6 +1,5 @@
 package interviews
 
-
 // 问：实现一个栈，要求实现Push（出栈）、Pop（入栈）、Min（返回最小值的操作）的时间复杂度为O(1)~
 
 type Node struct {

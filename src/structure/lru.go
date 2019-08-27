@@ -5,8 +5,6 @@ import (
 	"fmt"
 )
 
-
-
 // @todo :LRU缓存淘汰算法
 // LRU是最近最少使用策略的缩写，是根据数据的历史访问记录来进行淘汰数据，其核心思想是“如果数据最近被访问过，那么将来被访问的几率也更高”.
 // 使用has map ➕ 双链表实现.
@@ -14,8 +12,8 @@ import (
 
 // lru数据结构
 type LruCache struct {
-	capacity int						// cache长度
-	Items    map[string]*list.Element	//元素
+	capacity int                      // cache长度
+	Items    map[string]*list.Element //元素
 	Link     *list.List
 }
 
@@ -24,7 +22,6 @@ type Item struct {
 	Key   string
 	Value interface{}
 }
-
 
 // 创建cache数据结构
 func NewLruCache(capacity int) *LruCache {

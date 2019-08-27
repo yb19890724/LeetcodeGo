@@ -18,13 +18,13 @@ var (
   更进一步，如果要将性能优化到极致的话，我们可以将这里的除以2操作转化成位运算low+((high-low)>>1)
 */
 func BinarySearch(data []int, search int) int {
-	
+
 	low = 0
 	high = len(data) - 1
-	
+
 	for low <= high {
 		middle = low + (high-low)/2
-		
+
 		if data[middle] > search {
 			high = middle - 1
 		} else if data[middle] < search {
@@ -54,13 +54,13 @@ func BinarySearch(data []int, search int) int {
 */
 
 func FirstBinarySearch(data []int, search int) int {
-	
+
 	low = 0
 	high = len(data) - 1
-	
+
 	for low <= high {
 		middle = low + (high-low)/2
-		
+
 		if data[middle] > search {
 			high = middle - 1
 		} else if data[middle] < search {
@@ -84,13 +84,13 @@ func FirstBinarySearch(data []int, search int) int {
 */
 
 func LastBinarySearch(data []int, search int) int {
-	
+
 	low = 0
 	high = len(data) - 1
-	
+
 	for low <= high {
 		middle = low + (high-low)/2
-		
+
 		if data[middle] > search {
 			high = middle - 1
 		} else if data[middle] < search {

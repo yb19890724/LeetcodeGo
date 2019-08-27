@@ -27,7 +27,6 @@ func TestMinStackPush(t *testing.T) {
 // @test min stack pop
 func TestMinStackPop(t *testing.T) {
 
-
 	minStack := MinStack{10, 0, [10]Node{}}
 
 	minStack.Push(1)
@@ -38,7 +37,6 @@ func TestMinStackPop(t *testing.T) {
 
 // @test min stack min
 func TestMinStackMin(t *testing.T) {
-
 
 	minStack := MinStack{10, 0, [10]Node{}}
 

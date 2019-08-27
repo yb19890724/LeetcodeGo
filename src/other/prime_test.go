@@ -13,4 +13,3 @@ func TestPrime(t *testing.T) {
 	assert.Equal(t, Prime(47), true, " prime 47 judge error ")
 
 }
-

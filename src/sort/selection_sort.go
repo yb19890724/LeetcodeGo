@@ -1,8 +1,7 @@
 package sort
 
-
 // 选择排序
-func SelectionSort(data []int) []int{
+func SelectionSort(data []int) []int {
 	times := 0
 	for i := 0; i < len(data)-1; i++ {
 		min := i
@@ -20,4 +19,3 @@ func SelectionSort(data []int) []int{
 	}
 	return data
 }
-

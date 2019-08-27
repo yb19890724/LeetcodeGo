@@ -17,41 +17,41 @@ package sort
 */
 
 func CountSort(data []int) []int {
-	
+
 	if len(data) <= 1 {
 		return data
 	}
-	
+
 	var max int = data[0]
-	
+
 	for i := 0; i < len(data); i++ {
 		if data[i] > max {
 			max = data[i]
 		}
 	}
-	
+
 	// @todo 分配桶
 	var dataTemp []int = make([]int, max+1)
-	
+
 	for i := 0; i < len(data); i++ {
 		dataTemp[data[i]]++
 	}
-	
+
 	for i := 1; i <= max; i++ {
 		dataTemp[i] = dataTemp[i-1] + dataTemp[i]
 	}
-	
+
 	var result []int = make([]int, len(data))
-	
+
 	for i := len(data) - 1; i >= 0; i-- {
-		
+
 		index := dataTemp[data[i]] - 1
-		
+
 		result[index] = data[i]
-		
+
 		dataTemp[data[i]]--
-		
+
 	}
-	
+
 	return result
 }

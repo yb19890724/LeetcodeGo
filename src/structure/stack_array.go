@@ -10,9 +10,9 @@ type Stack interface {
 }
 
 type ArrayStack struct {
-	MaxSize int   // 最大长度
+	MaxSize int     // 最大长度
 	Array   [10]int // 数组
-	Top   int   // 顶栈
+	Top     int     // 顶栈
 }
 
 // 入栈

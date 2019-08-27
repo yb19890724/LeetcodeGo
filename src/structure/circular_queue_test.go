@@ -26,31 +26,31 @@ func initCircularQueue() *CircularArrayQueue {
 func TestCircularEnQueue(t *testing.T) {
 
 	CircularArrayQueue := initCircularQueue()
-	
+
 	assert.Equal(t, CircularArrayQueue.All(), [5]int{1, 2, 3, 4, 0}, " queue enqueue error ")
-	
+
 }
 
 // @test  queue dequeue 测试出队
 func TestCircularDequeue(t *testing.T) {
 
 	CircularArrayQueue := initCircularQueue()
-	
+
 	testData := []int{1, 2, 3, 4, 0}
-	
+
 	for i := 0; i < CircularArrayQueue.MaxSize-1; i++ {
 
 		assert.Equal(t, CircularArrayQueue.Dequeue(), testData[i], " queue dequeue error ")
 
 	}
-	
+
 }
 
 // @test queue max size 测试队列长度限制
 func TestCircularMaxSize(t *testing.T) {
 
 	CircularArrayQueue := initQueue()
-	
+
 	assert.Equal(t, CircularArrayQueue.Enqueue(6), false, " queue max size overstep ")
-	
+
 }
