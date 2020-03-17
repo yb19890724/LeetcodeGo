@@ -15,7 +15,7 @@ func QuickSort(data []int) []int {
 
 	for i := 1; i < len(data); i++ {
 
-		if data[i] < data[0] {
+		if data[i] <= data[0] {
 
 			left = append(left, data[i])
 
