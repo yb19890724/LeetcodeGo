@@ -7,6 +7,7 @@ https://leetcode-cn.com
 
     ├──src
     │    ├── calculation  计算 
+    │    │    ├── add_number.go        n数之和
     │    │    ├── to_sum.go            两数之和
     │    │    ├── to_three_sum.go      三数之和去重
     │    │    └── add_two_number.go    两数相加
@@ -34,6 +35,7 @@ https://leetcode-cn.com
     │    │    ├── reverse_str.go           翻转字符串   
     │    │     
     │    └──  structure   数据结构
+    │         ├── triangles.go          杨辉三角
     │         ├── structure_array.go    稀疏数组
     │         ├── z_convert.go          z型输出
     │         └── queue_array.go        数组队列

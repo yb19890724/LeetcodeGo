@@ -48,7 +48,7 @@ func TestAddTwoNumbers(t *testing.T) {
 	
 	
 	
-	assert.Equal(t, l3 ,AddTwoNumbers(l1,l2), " add wwo numbers value not equal ")
+	assert.Equal(t, l3 ,AddTwoNumbers(l1,l2), " add two numbers value not equal ")
 	
 	
 }
