@@ -1,11 +1,8 @@
 package main
 
-import "fmt"
+import "github.com/yb19890724/leetcode-go/src/structure"
 
 func main()  {
-	res := [][]int{}
-	
-	res[0][0] =1
-	
-	fmt.Println(res)
+	structure.Triangles(3)
+	structure.Triangles2(20)
 }
