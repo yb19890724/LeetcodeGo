@@ -9,7 +9,7 @@ package query
 // @todo 解题思路
 //   遇到左括号就进栈push，遇到右括号并且栈顶为与之对应的左括号，就把栈顶元素出栈。最后看栈里面还有没有其他元素，如果为空，即匹配。
 //   需要注意，空字符串是满足括号匹配的，即输出 true。
-func isValid(s string) bool {
+func IsValid(s string) bool {
 
 	// 空字符串直接返回 true
 	if len(s) == 0 {

@@ -7,23 +7,23 @@ import (
 
 func TestIsValid(t *testing.T) {
 
-	valid := isValid("()")
+	valid := IsValid("()")
 
 	assert.Equal(t, valid, true, " Output Error ")
 
-	valid2 := isValid("()[]{}")
+	valid2 := IsValid("()[]{}")
 
 	assert.Equal(t, valid2, true, " Output Error. ")
 
-	valid3 := isValid("(]")
+	valid3 := IsValid("(]")
 
 	assert.Equal(t, valid3, false, " Output Error. ")
 
-	valid4 := isValid("([)]")
+	valid4 := IsValid("([)]")
 
 	assert.Equal(t, valid4, false, " Output Error. ")
 
-	valid5 := isValid("{[]}")
+	valid5 := IsValid("{[]}")
 
 	assert.Equal(t, valid5, true, " Output Error. ")
 }
