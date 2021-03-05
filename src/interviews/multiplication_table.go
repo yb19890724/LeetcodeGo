@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-//@test multiplication table
+// @test multiplication table
 func MultiplicationTable() {
 
 	for i := 1; i <= 9; i++ {

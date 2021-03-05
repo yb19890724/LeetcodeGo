@@ -1,7 +1,5 @@
 package sort
 
-import "fmt"
-
 // 基数排序
 
 // 基数排序非常适合用于整数排序（尤其是非负整数）
@@ -11,13 +9,12 @@ import "fmt"
 
 func RadixSort(data []int) []int{
 	
-	// 对每一位的0~9进行排序
 	var (
-		counts = new([10]int)
+		counts = new([10]int) // 对每一位的0~9的数进行排序
 		cle    = len(counts)
 		le     = len(data)
-		max    = maxVal(data)
-		res    = make([]int,le)
+		max    = maxVal(data)// 最大值 排序的次数
+		tmp    = make([]int,le,le)// 每一次排好序的位置
 		k int
 	)
 	
@@ -34,16 +31,16 @@ func RadixSort(data []int) []int{
 			counts[j] += counts[j-1]
 		}
 		
-		fmt.Println(counts)
 		// 从后往前便利元素，将它放到有序数组中的合适位置
 		for n := le - 1; n >= 0; n-- {
 			
 			k = data[n] / c % 10
-			res[counts[k]-1] = data[n]
-			counts[k]--
+			tmp[counts[k]-1] = data[n]
+			counts[k]-- // 相同数量位置-1
 		}
 		
-		for i, v := range res {
+		// 最终排序放回原来的数组，记录当前位数已有的序
+		for i, v := range tmp {
 			data[i] = v
 		}
 	}

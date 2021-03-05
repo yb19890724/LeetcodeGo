@@ -1,5 +1,7 @@
 package structure
 
+import "fmt"
+
 // heap
 // 一种树状数据结构，一般用数据实现
 
@@ -17,19 +19,19 @@ package structure
 // 如果 2i + 2 > n - 1 它没有右子节点
 
 // 堆结构
-type MaxHeap struct {
-    Data []int
-    Size int
+type MinHeap struct {
+	Data []int
+	Size int
 }
 
 // 清空堆
-func (h *MaxHeap) Clear() {
+func (h *MinHeap) Clear() {
 	h.Data = []int{}
 	h.Size = 0
 }
 
 // 获取堆顶
-func (h *MaxHeap) Top() int {
+func (h *MinHeap) Top() int {
 	
 	if h.Size > 0 {
 		return h.Data[0]
@@ -39,30 +41,29 @@ func (h *MaxHeap) Top() int {
 }
 
 // 是否是空堆
-func (h *MaxHeap) isEmpty() bool {
+func (h *MinHeap) isEmpty() bool {
 	return h.Size == 0
 }
 
-
-// Add(72)  0
-// Add(68)  1
-// Add(43)  2
-// Add(50)  3
-// Add(38)  4
-// [72 68 43 50 38 ]
+// Add(6)
+// Add(16)
+// Add(23)
+// Add(18)
+// Add(44)
+// [6 16 23 18 44 ]
 
 // 添加元素
-func (h *MaxHeap) Add(e int)  {
+func (h *MinHeap) Add(e int) {
 	
 	h.Data[h.Size] = e
 	h.Size++
-	h.SiftUp(h.Size-1)
+	h.SiftUp(h.Size - 1)
 }
 
 // 自上而下的上滤 让index位置元素上滤
 // o(logn)
 // 如果添加节点小于等于父节点直接退出
-func (h *MaxHeap) SiftUp(i int)  {
+func (h *MinHeap) SiftUp(i int) {
 	
 	// @todo 方式1
 	// for i > 0{
@@ -89,19 +90,18 @@ func (h *MaxHeap) SiftUp(i int)  {
 	//
 	// 方式2 减少交换次数
 	
-	
 	// 当前指定节点
 	n := h.Data[i]
 	
-	for i > 0{
- 	
+	for i > 0 {
+		
 		// 父节点索引
-		pi:= (i - 1) >> 2
+		pi := (i - 1) >> 2
 		// 父节点值
-		pn:=h.Data[pi]
+		pn := h.Data[pi]
 		
 		// 添加节点小于父节点
-		if n <= pn {
+		if n >= pn {
 			break
 		}
 		
@@ -112,7 +112,7 @@ func (h *MaxHeap) SiftUp(i int)  {
 		i = pi
 	}
 	// 找到最后的位置
-	h.Data[i]=n
+	h.Data[i] = n
 }
 
 // 删除 就是删除堆顶元素
@@ -120,7 +120,7 @@ func (h *MaxHeap) SiftUp(i int)  {
 // 1.删除元素时先拿最后一个元素覆盖他的位置
 // 2.循环比较，做交换
 // 如果node 小于子节点，与最大的子节点位置交换，或者没有字节点了 退出循环
-func (h *MaxHeap) Remove() int {
+func (h *MinHeap) Remove() int {
 	
 	if h.isEmpty() {
 		panic("heap is empty")
@@ -148,11 +148,11 @@ func (h *MaxHeap) Remove() int {
 // 完全二叉树非叶子节点个数 n1+n2 = floor(n/2) 向下取整
 // 先让本身节点和左右子节点建堆，然后继续下滤建堆
 
-func (h *MaxHeap) SiftDown(i int) {
+func (h *MinHeap) SiftDown(i int) {
 	
 	var (
-	    ci int // 用来比较的子节点索引
-	    cn int // 用来比较的子节点值
+		ci int // 用来比较的子节点索引
+		cn int // 用来比较的子节点值
 	)
 	
 	// 第一个个叶子节点的索引就是，非叶子节点的数量
@@ -160,8 +160,6 @@ func (h *MaxHeap) SiftDown(i int) {
 	
 	// 当前指定节点
 	n := h.Data[i]
-	
-	
 	
 	// index位置保证是非叶子节点的位置才循环
 	// 循环条件小于第一个叶子节点的索引
@@ -171,24 +169,25 @@ func (h *MaxHeap) SiftDown(i int) {
 		
 		// 默认用左子节点索引进行比较操作
 		// 公式等于：2i+1
-		li := (i<<1)+1
+		li := (i << 1) + 1
 		// 左子节点的值
+		
 		ln := h.Data[li]
 		
 		// 右子节点 index
 		ri := li + 1
 		
 		// 判断是否存在右子节点,并且比较左右节点的值，谁比较大用谁
-		if ri < h.Size && h.Data[ri] > ln {
+		if ri < h.Size && h.Data[ri] < ln {
 			ci = ri
 			cn = h.Data[ri]
-		}else{
+		} else {
 			ci = li
 			cn = ln
 		}
 		
 		// 如果添加节点大于子节点 直接退出
-		if n >=cn  {
+		if n <= cn {
 			break
 		}
 		
@@ -200,10 +199,11 @@ func (h *MaxHeap) SiftDown(i int) {
 	}
 	
 	h.Data[i] = n
+	
 }
 
 // 删除堆顶元素的时候插入已个新元素
-func (h *MaxHeap) Replace(i int) {
+func (h *MinHeap) Replace(i int) {
 	
 	// @todo 方法1
 	// 2*O(logn)
@@ -235,31 +235,31 @@ func (h *MaxHeap) Replace(i int) {
 //  for(i:=(size >>1 )-1;i>=0;i--){
 //       SiftDown(i)
 //  }
-func (h *MaxHeap) HeapIfy(Data []int) {
+func (h *MinHeap) HeapIfy(Data []int) {
 	
 	// @todo 这种方法是浅copy 会导致外面修改了内部的值
 	// h.Data =Data
 	// h.Size =len(Data)
 	
-	l:=len(Data)
+	l := len(Data)
 	
 	if h.Data == nil || h.Size == 0 {
-		h.Data = make ([]int,l)
+		h.Data = make([]int, l)
 	}
 	
 	// 添加到数组里面
-	for i,v := range Data {
+	for i, v := range Data {
 		h.Data[i] = v
 	}
 	
-	h.Size  = l
+	h.Size = l
 	
+	fmt.Println(h.Data)
 	// 堆化操作
 	for i := (h.Size >> 1) - 1; i >= 0; i-- {
 		h.SiftDown(i)
 	}
 }
-
 
 // 疑惑:
 // 以下方式是否可以建堆
@@ -267,9 +267,3 @@ func (h *MaxHeap) HeapIfy(Data []int) {
 // 2.自下而上的上滤
 
 // 不可以
-
-
-
-
-
-

@@ -44,6 +44,6 @@ func (r *Robot) device(name string) *device {
 // nil指针具有类型的事实有两个重要含义，
 // 第一个含义是，您可以很好地链接方法，而无需在调用方站点检查返回的值是否为nil。
 // 第二个原因是您的方法应该预期会在nil指针上被调用，并且应该正确处理此类情况。
-func main() {
+func TestCheckReceiver() {
 	newRobot().device("")
 }

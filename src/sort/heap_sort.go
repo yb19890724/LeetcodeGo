@@ -1,5 +1,10 @@
 package sort
 
+import (
+	//"fmt"
+	"github.com/yb19890724/leetcode-go/src/structure"
+)
+
 // 堆排序
 // 理解：选择排序的一种优化
 
@@ -21,23 +26,20 @@ package sort
 
 // @todo 优化空间 如果用堆来查找最小值 O(n*logn)
 func HeapSort(data []int) []int {
-	times := 0
-	for i := 0; i < len(data)-1; i++ {
-		// 最小的元素索引
-		min := i
-		for j := i; j < len(data); j++ {
-			times++
-			if data[min] > data[j] {
-				min = j
-			}
-		}
-		
-		// 如果当前索引不是最小的索引，那就把最小的索引与现有所以值交换
-		if min != i {
-			tmp := data[i]
-			data[i] = data[min]
-			data[min] = tmp
-		}
+	
+	h := structure.MinHeap{
+		Data:make([]int,len(data)),
 	}
-	return data
+	
+	h.HeapIfy(data)
+	
+	var res = make([]int,len(data))
+	
+	s:=h.Size
+	for i :=0; i < s; i++ {
+		t := h.Remove()
+		res[i] =t
+	}
+	
+	return res
 }

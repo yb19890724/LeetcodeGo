@@ -1,6 +1,8 @@
 package interviews
 
-import "github.com/yb19890724/leetcode-go/src/structure"
+import (
+	"github.com/yb19890724/leetcode-go/src/structure"
+)
 
 // 从n个整数，找出最大的前k个数(k 远远小于n)
 
@@ -20,12 +22,18 @@ import "github.com/yb19890724/leetcode-go/src/structure"
 var (
 	k    = 5
 	data = []int{1, 10, 230, 4, 99, 21, 334, 20, 60, 50}
-	l    = len(data)
+	
 )
 
 
-func TopK() {
-	var h structure.MaxHeap
+func TopK(data []int,k int ) []int{
+	
+	l := len(data)
+	h := structure.MinHeap{
+		Data: make([]int, 5),
+	}
+	
+	
 	
 	for i := 0; i < l; i++ {
 		
@@ -37,9 +45,11 @@ func TopK() {
 		}
 		
 		if data[i] > h.Data[0] {// 如果是k+1 替换操作
+		
 			// 如果大于小顶堆的堆顶 就替换
 			h.Replace(data[i])// O(logk)
 		}
 	}
+	return h.Data
 }
 

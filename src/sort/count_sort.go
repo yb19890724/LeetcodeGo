@@ -148,7 +148,7 @@ func CountSort2(data []int) []int {
 	}
 	
 	// @todo 分配桶
-	var dataTemp = make([]int, max-min+1)
+	var dataTemp = make([]int, max+1)
 	
 	for i := 0; i < len(data); i++ {
 		dataTemp[data[i]]++
