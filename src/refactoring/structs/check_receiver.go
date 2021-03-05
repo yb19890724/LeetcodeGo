@@ -5,12 +5,12 @@ package _struct
 
 //
 type Robot struct {
-	devices[]*device
+	devices []*device
 }
 
 //
 type device struct {
-    Name string
+	Name string
 }
 
 //
@@ -47,4 +47,3 @@ func (r *Robot) device(name string) *device {
 func main() {
 	newRobot().device("")
 }
-
