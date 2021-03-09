@@ -16,6 +16,7 @@ https://leetcode-cn.com
     │    │ 
     │    ├── query        查找 
     │    ├── 字符串相关
+    │    │    ├── strstr.go             字符串匹配位置查找
     │    │    ├── binary_search.go         二分查找
     │    │    ├── longest_palindrome.go    最长回文子串
     │    │    ├── is_valid.go              有效括号                     顶栈操作，符合了就删除顶栈
@@ -39,6 +40,7 @@ https://leetcode-cn.com
     │    │    ├── fibonacci.go             斐波那数列
     │    │    ├── prime.go                 求素数       
     │    │    ├── reverse_int.go           翻转整数    
+    │    │    ├── max_sub_array.go         最大子序和   
     │    │    └── reverse_str.go           翻转字符串   
     │    │     
     │    └──  structure   数据结构

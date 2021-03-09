@@ -1,5 +1,7 @@
 package other
 
+// 解法1
+// 循环字符串，按照字符串长度从右往左 移动字符串
 func ReverseStr(s string) string {
 	
 	l := len(s)
@@ -12,7 +14,8 @@ func ReverseStr(s string) string {
 	return string(res)
 }
 
-
+// 解法2
+// 循环字符串，按照字符串长度从右往左
 func ReverseStr2(s string) string {
 	
 	l := len(s)
