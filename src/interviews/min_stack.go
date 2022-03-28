@@ -22,7 +22,7 @@ type MinStack struct {
 // 入栈
 func (stack *MinStack) Push(item int) bool {
 
-	// 慢栈
+	// 满栈
 	if stack.Top == stack.MaxSize {
 
 		return false

@@ -5,11 +5,13 @@ package other
 // 时间复杂度 O(2^n）
 func Fibonacci(n int) int {
 
-	if n <= 1 {
-		return n
+	var result int
+	if n < 2 {
+		result = n
+	} else {
+		result = Fibonacci(n-1) + Fibonacci(n-2)
 	}
-
-	return Fibonacci(n-1) + Fibonacci(n-2)
+	return result
 }
 
 // 非递归版本
