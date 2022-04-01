@@ -1,6 +1,7 @@
 package calculation
 
 import (
+	"fmt"
 	"sort"
 )
 
@@ -20,61 +21,50 @@ import (
 // 3. 固定i后，取j = i+1,k =len(nums)-1，j和k在j<k的情况下（j>i和j<k已经保证j和k在移动过程中不会数组越界）作为双指针进行遍历，判断a+b+c
 
 func ThreeSum(nums []int) [][]int {
-	
-	if nums == nil || len(nums) < 3 {
+
+
+	if nil == nums || len(nums) < 3  {
 		return nil
 	}
-	
-	// 对nums升序重排
+
 	sort.Ints(nums)
-	len := len(nums)
+
+	m := make(map[string]string)
+	count :=len(nums)
 	res := [][]int{}
-	
-	// 从第一个数开始往后匹配，留下最后两位。
-	for i := 0; i < len-2; i++ {
-	
-		// 如果不是第一个需要 做去重处理
-		if i > 0 && nums[i] == nums[i-1] {
-			continue
-		}
-		
+
+	for i:=0;i < count -2; i++ {
+
 		// 双指针方式
-		l := i + 1    // j
-		r := len - 1  // k
-		
-		// l >= r 当前的所有组合方式都已经匹配完成
+		l := i + 1    // l
+		r := count - 1  // r
+
 		for l < r {
-	
+
 			s := nums[i] + nums[l] + nums[r]
-		
-			// 如果小于0 从左向右移动
-			if s < 0 {
-				l++
-			}
-			
-			// 如果小于0 从右向左移动
+
 			if s > 0 {
 				r--
 			}
-			
-			if s == 0 {
-				res = append(res, []int{nums[i], nums[l], nums[r]})
-				
-				// 下面两个循环为了出现相同的数，做去重处理
-				for l < r && nums[l] == nums[l+1] {
-					l++
+
+			if s < 0 {
+				l++
+			}
+
+			if 0 == s {
+
+				tmpKey:= fmt.Sprintf("%d%d%d",i,l,r)
+				if _,ok :=m[tmpKey]; !ok {
+					res = append(res, []int{nums[i],nums[l],nums[r]})
+					m[tmpKey] =tmpKey
 				}
-				
-				for l < r && nums[r] == nums[r-1] {
-					r--
-				}
-				
-				// 找到下一个组合
+
 				l++
 				r--
 			}
-			
+
 		}
 	}
+
 	return res
 }
